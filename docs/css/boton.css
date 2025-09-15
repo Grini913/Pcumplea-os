@@ -14,14 +14,9 @@ body{
     /* padding-top: -30; */
 }
 
-.botones{
-    padding: 9px;
-    border-radius: 80px;
-    background-color: transparent;
-    border: none;
-}
 
-.botones a{
+
+.botones {
     background-color: #0a2be9;
     padding: 9px;
     border-radius: 80px;
@@ -32,7 +27,7 @@ body{
 
 }
 
-.botones a:focus{
+.botones:focus{
     background-color: rgb(50, 194, 194);
 }
 

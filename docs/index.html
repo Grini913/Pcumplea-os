@@ -21,12 +21,19 @@
     <div class="description">
         <span>ESTE DETALLE ES PARA TI :)</span>
     </div>
-    <div class="button">
-        <button class="botones">
-            <a href="cake.html" style="color: #fff;">CLICK AQUÍ</a>
-        </button>
+  <div class="button">
+        <!-- Ya no usamos <a>, sino onclick -->
+        <button class="botones" onclick="irACake()" style="color: #fff;">CLICK AQUÍ</button>
     </div>
 
+    <script>
+        function irACake() {
+            // Guardamos una bandera para indicar que hay interacción
+            localStorage.setItem("reproducirMusica", "true");
+            // Redirigimos a cake.html
+            window.location.href = "cake.html";
+        }
+    </script>
 </body>
 
 </html>

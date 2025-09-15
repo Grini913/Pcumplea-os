@@ -4,44 +4,57 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Abre me</title>
+  <title>HB</title>
   <link rel="stylesheet" href="css/Style.css">
+  <link rel="stylesheet" href="css/mensajeB.css">
 </head>
 <body class="container">
-  <!-- Audio con controles para depuración -->
-  <audio id="myAudio" src="Recursos/Mx_HB.mp3" controls>
-    Tu navegador no soporta el elemento de audio.
-  </audio>
-
+  <!-- Audio SIN controles -->
+  <audio id="myAudio" src="Recursos/Mx_HB.mp3" loop></audio>
+  <div id="lyrics"></div>
   <canvas id="fireworks"></canvas>
-
+  <div id="countdown" class="countdown"></div>
   <div>
     <h1 class="titulo">
-      Felices 2 años, a pesar de la distancia eres una buena amiga <br><br>
-      Gracias por iluminar mis días con tu presencia.
+      Felices Cumpleaños Irina 💗 
     </h1>
     <div class="cake-container">
-      <div class="candle">
-        <div class="flame"></div>
-      </div>
+        <div class="candle">
+    <div class="flame" id="flame"></div>
+  </div>
       <div class="frosting"></div>
       <div class="layer"></div>
       <div class="layer"></div>
       <div class="layer"></div>
       <div class="base"></div>
     </div>
+    <!-- 🎉 Mensaje de cumpleaños -->
+  <div id="birthday-messages">
+  <div class="msg">Feliz cumpleaños Iri, desde la distancia un gran abrazo y espero que la pases muy feliz en este día.</div>
+  <div class="msg">Te quiero muuuuucho ❤️</div>
+  <div class="msg">Gracias por tu amistad</div>
+  <div class="msg final">Felices 21 🎂</div>
+</div>
+
   </div>
 
   <script>
-    // Script para reproducir el audio tras interacción
-    window.addEventListener('click', () => {
-      const audio = document.getElementById('myAudio');
-      audio.play().catch(error => {
-        console.error("Error al reproducir el audio:", error);
-      });
+    window.addEventListener("DOMContentLoaded", () => {
+      const audio = document.getElementById("myAudio");
+      const reproducir = localStorage.getItem("reproducirMusica");
+
+      if (reproducir === "true") {
+        audio.play().catch(err => {
+          console.log("El navegador bloqueó el autoplay:", err);
+        });
+        // Borramos la bandera para que no se quede guardada
+        localStorage.removeItem("reproducirMusica");
+      }
     });
   </script>
+  <script src="mensaje.js"></script>
   <script src="F_A.js"></script>
+  <script src="flame.js"></script>
   <script src="main.js"></script>
 </body>
 </html>

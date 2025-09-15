@@ -61,4 +61,5 @@
       createFirework(x, y);
     }, 800);
 
-    loop();
+
+    setTimeout(loop, 4000);

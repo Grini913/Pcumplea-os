@@ -1,0 +1,51 @@
+#birthday-messages {
+  font-size: 20px;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  color: white;
+  text-align: center;
+  margin-top: 40px;
+  position: relative;
+  height: 60px; /* espacio reservado */
+}
+
+.msg {
+  opacity: 0;
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 0;
+  animation: fadeSequence 24s ease-in-out forwards;
+}
+
+/* Animación de aparición y desaparición */
+@keyframes fadeSequence {
+  0% { opacity: 0; }
+  5% { opacity: 1; }
+  20% { opacity: 1; }
+  25% { opacity: 0; }
+  100% { opacity: 0; }
+}
+
+/* Apariciones secuenciales */
+.msg:nth-child(1) { animation-delay: 15s; }  
+.msg:nth-child(2) { animation-delay: 21s; }  
+.msg:nth-child(3) { animation-delay: 27s; }  
+
+/* 🎉 Último mensaje: aparece y se queda */
+.final {
+  opacity: 0; /* ✅ empieza invisible */
+  animation: fadeInStay 2s ease-in forwards, glow 2s ease-in-out infinite alternate;
+  animation-delay: 33s; /* ✅ aparece al final */
+}
+
+/* Fade in y se queda */
+@keyframes fadeInStay {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* ✨ Efecto brillante */
+@keyframes glow {
+  from { text-shadow: 0 0 8px #fff, 0 0 12px #ff80ff, 0 0 20px #ff0080; }
+  to   { text-shadow: 0 0 15px #fff, 0 0 25px #ff4da6, 0 0 35px #ff0080; }
+}
