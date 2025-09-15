@@ -1,50 +1,32 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Abre me</title>
-  <link rel="stylesheet" href="Style.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="img/flowers.png" type="image/x-icon">
+    <title>Flowers</title>
 </head>
-<body class="container">
 
-  <!-- Audio (renombrado sin espacios) -->
-  <audio id="bg-music" src="Recursos/Mx_HB.mp3" loop></audio>
-
-  <canvas id="fireworks"></canvas>
-
-  <div>
-    <h1 class="titulo">
-      Felices 20 años, a pesar de la distancia eres una buena amiga <br><br>
-      Gracias por iluminar mis días con tu presencia.
-    </h1>
-    <div class="cake-container">
-      <div class="candle">
-        <div class="flame"></div>
-      </div>
-      <div class="frosting"></div>
-      <div class="layer"></div>
-      <div class="layer"></div>
-      <div class="layer"></div>
-      <div class="base"></div>
+<body>
+    <div class="greetings">
+        <span>H</span>
+        <span>o</span>
+        <span>l</span>
+        <span>a</span>
+        <span>!</span>
     </div>
-  </div>
-
-  <script>
-    // --- AUDIO ---
-    window.addEventListener("load", () => {
-  const audio = document.getElementById("bg-music");
-
-  // Intenta reproducir apenas carga
-  audio.muted = false;  
-  audio.play().catch(() => {
-    console.log("El navegador bloqueó el autoplay con sonido 😓");
-  });
-});
-    
-  </script>
-  <script src="F_A.js"></script>
-  <script src="main.js"></script>
+    <div class="description">
+        <span>ESTE DETALLE ES PARA TI :)</span>
+    </div>
+    <div class="button">
+        <button class="botones">
+            <a href="cake.html" style="color: #fff;">CLICK AQUÍ</a>
+        </button>
+    </div>
 
 </body>
+
 </html>
