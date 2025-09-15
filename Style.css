@@ -1,0 +1,135 @@
+ body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: black;
+    font-family: sans-serif;
+    
+  }
+  .titulo {
+  margin-bottom: 180px;
+  font-family: "Arial Narrow", Arial, sans-serif;
+  color: yellow;
+   text-shadow: 0 0 10px #00eaff, 0 0 20px #ff00ff;
+  position: relative;
+   height: 50px;
+  font-weight: bold;
+  letter-spacing: 10px;
+  opacity: 0;
+  animation: fadeIn 5s ease-in-out forwards;
+  text-align: center;
+}
+
+.h1 {
+  font-size: 2em;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+
+  .cake-container {
+    position: relative;
+    animation: fadeIn 1s ease forwards;
+  }
+
+  /* Capas del pastel */
+  .layer {
+    position: relative;
+    width: 200px;
+    height: 50px;
+    border-radius: 15px;
+    margin: 5px auto;
+    background: linear-gradient(to bottom, rgba(255,255,255,0.15), rgba(0,0,0,0.2)),
+                linear-gradient(to right, #ff80ff, #00ffff);
+    border: 2px solid #00eaff;
+    box-shadow: 0 0 10px #00eaff, 0 0 20px #ff00ff;
+  }
+
+  /* Sombras para volumen */
+  .layer::after {
+    content: "";
+    position: absolute;
+    bottom: -8px;
+    left: 5%;
+    width: 90%;
+    height: 8px;
+    background: rgba(0,0,0,0.3);
+    border-radius: 50%;
+    filter: blur(4px);
+  }
+
+  /* Frosting superior */
+  .frosting {
+    width: 220px;
+    height: 25px;
+    margin: -10px auto 5px;
+    background: repeating-linear-gradient(135deg, #ff00ff 0 10px, transparent 10px 20px);
+    border-radius: 15px;
+    border: 2px solid #ff00ff;
+    box-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff;
+    /*animation: wave 2s infinite ease-in-out;*/
+  }
+
+  /* Vela */
+  .candle {
+    position: absolute;
+    top: -60px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 16px;
+    height: 40px;
+    background: linear-gradient(to bottom, #00ff88, #004422);
+    border: 2px solid #00ff88;
+    border-radius: 4px;
+    box-shadow: 0 0 10px #00ff88, 0 0 20px #00ff88;
+  }
+
+  /* Llama */
+  .flame {
+    position: absolute;
+    top: -22px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 14px;
+    height: 20px;
+    background: radial-gradient(circle at 50% 40%, #fff8b0, #ff9900 70%);
+    border-radius: 50% 50% 50% 50%;
+    animation: flicker 0.4s infinite alternate;
+    box-shadow: 0 0 10px #ffcc33, 0 0 20px #ff9900;
+  }
+
+  /* Base */
+  .base {
+    width: 260px;
+    height: 25px;
+    margin: 10px auto 0;
+    background: linear-gradient(to right, #ffaa00, #ff5500);
+    border-radius: 10px;
+    border: 2px solid #ffaa00;
+    box-shadow: 0 0 10px #ffaa00, 0 0 20px #ff5500;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes wave {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-3px); }
+  }
+
+  @keyframes flicker {
+    0% { transform: translateX(-50%) scale(1); opacity: 0.9; }
+    100% { transform: translateX(-50%) scale(1.15); opacity: 1; }
+  }
+
+    /* --- Fuegos artificiales --- */
+  canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+  }
